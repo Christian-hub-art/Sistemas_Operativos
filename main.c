@@ -16,7 +16,7 @@ int N =(int)atof(argv[3]);
 
 printFuntion();
 
-float valorIMC = imcFuntion(masacorporal, altura);
+float valorIMC = imcFuntion(masacorporal, altura); // Calcula el Índice de Masa Corporal (IMC) de una persona.
 
 printf("El indice de masa corporal es %f\n", valorIMC);
 printf("***********************************\n\n\n");
@@ -24,11 +24,11 @@ printf("           Matrices                    \n");
 printf("***************************************\n");
 float m1, m2, m3;
 
-llenarMatriz(N, m1, m2);
-impMatriz( m1, N);
+llenarMatriz(N, m1, m2); // Llena dos matrices cuadradas de tamaño N×N con valores proporcionados o generados aleatoriamente según la implementación
+impMatriz( m1, N); // Imprime en pantalla una matriz de tamaño N×N.
 impMatriz(m2, N);
 
-float mC = matrixMult(N, m1, m2);
+float mC = matrixMult(N, m1, m2); // Realiza la multiplicación de dos matrices cuadradas de tamaño N×N.
 impMatriz(mC, N);
 
 return 0;
