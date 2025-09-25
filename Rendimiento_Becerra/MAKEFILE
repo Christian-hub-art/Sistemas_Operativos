@@ -1,0 +1,12 @@
+GCC = gcc
+
+MODULO = modulo
+
+
+PROGRAMAS = labRendiBecerra
+
+multiMatrizClasica:
+	$(GCC) $(MODULO).c -c
+	$(GCC) $@.c $(MODULO).o -o $@
+clear:
+	$(RM) $(PROGRAMAS) $(MODULO).o
