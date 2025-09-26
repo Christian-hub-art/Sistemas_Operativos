@@ -41,6 +41,7 @@
 #include <sys/time.h>
 #include "modulo.c"
 
+// se incializa apuntadores tipo double para las tres matrices 
 double *mA, *mB, *mC;
 
 int main(int argc, char *argv[]) {
@@ -52,28 +53,28 @@ int main(int argc, char *argv[]) {
     }
     //El parametro que es pasado por consola se pasa de un string a un entero para definir el tamaño de las matrices
     int N = (int) atof(argv[1]);
-
+    //Se establece que el parametro ingresado del tamaño de la matriz sea mayor a cero
     if(N<=0){
         printf("\n Valores deben ser mayor que cero\n");
         return -1;
     };
-
+    //Se asigna memoria a cada apuntador dependiendo del tamaño de la matriz solicitada 
     mA = (double *) malloc(N*N*sizeof(double));
     mB = (double *) malloc(N*N*sizeof(double));
     mC = (double *) calloc(N*N,sizeof(double));
 
 	/** Se inicializan las 2 matrices **/
 	iniMatriz(N, mA, mB);
-
+    // Se muestran ambas matrices que se van a multiplicar 
 	imprMatrices(N, mA);
 	imprMatrices(N, mB);
-	
+	//Se multiplica ambas matrices y se muestra cuanto tarda el proceso 
 	InicioMuestra();
 	multiMatrizClasica(mA , mB ,N, mC);
 	FinMuestra();
-
+    //Se imprime la matriz resultado
 	imprMatrices(N, mC);
-
+        //Se libera memoria 
         printf("\n\tFin del programa.............!\n");
         free(mA);
         free(mB);

@@ -60,6 +60,7 @@ void FinMuestra(){
 //Funcion para inicializar matriz
 void iniMatriz(int n, double *m1, double *m2){
    	for(int i=0; i<n*n; i++){
+        //Por medio de un for se asigna los valores de cada matriz a partir del digito 2.3
 	        m1[i] = i*2.3 + 1.3;
 	        m2[i] = i*2.3;
 	}
@@ -70,6 +71,7 @@ void imprMatrices(int n, double *matriz){
         printf("\n#######################################################\n");
    	for(int i=0; i<n*n; i++){
                 if(i%n==0) printf("\n");
+                //Se imprime la matriz recorrida
 	        printf(" %f ", matriz[i]);
    }
     } else {
@@ -78,6 +80,7 @@ void imprMatrices(int n, double *matriz){
 };
 //funcion para la multiplicacion de dos matrices
 void multiMatrizClasica(double *m1, double *m2,int n,double *mC){
+    //Por medio de un for doble se va realizando la operacion entre dos matrices, con una complejidad n2
  for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
             //
